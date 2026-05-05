@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class CameraController : NetworkBehaviour
 {
     public GameObject cameraHolder;
-    public Vector3 offset;
 
     public override void OnNetworkSpawn()
     {
@@ -20,13 +19,5 @@ public class CameraController : NetworkBehaviour
         {
             cameraHolder.SetActive(false);
         }
-    }
-
-    void Update()
-    {
-        if (SceneManager.GetActiveScene().name != "MainMenu")
-        {
-            cameraHolder.transform.position = transform.position + offset;      
-        }
-    }
+    }   
 }
